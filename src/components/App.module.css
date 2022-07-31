@@ -1,0 +1,30 @@
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+.title {
+  font-family: Roboto, sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}

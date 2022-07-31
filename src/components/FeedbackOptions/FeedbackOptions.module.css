@@ -1,0 +1,21 @@
+.responseBtn {
+  width: 100px;
+  border-radius: 10%;
+  background-color: rgba(255, 255, 0, 0.507);
+  border-color: blue;
+  margin-bottom: 25px;
+}
+
+.responseBtn:not(:last-child) {
+  margin-right: 25px;
+}
+
+.responseBtn:hover {
+  background-color: blue;
+  border-color: yellow;
+  cursor: pointer;
+}
+
+.responseBtn:focus {
+  cursor: pointer;
+}

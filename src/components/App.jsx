@@ -14,14 +14,13 @@ export class App extends React.Component {
 
   countFeedback = e => {
     this.setState(prevState => ({
-      ...prevState,
-      ...{ [e.target.textContent]: prevState[e.target.textContent] + 1 },
-    }));
+      [e.target.textContent]: (prevState[e.target.textContent] + 1)
+    }
+    ))
   };
 
   countTotalFeedback() {
     const { good, neutral, bad } = this.state;
-    console.log(good + neutral + bad);
     return good + neutral + bad;
   }
 
@@ -35,11 +34,13 @@ export class App extends React.Component {
     const { good, neutral, bad } = this.state;
     return (
       <div className={style.container}>
-        <h2 className={style.title}>Please leave your feedback</h2>
+        <Section title="Please leave your feedback">
         <FeedbackOptions
-          options={(good, neutral, bad)}
+            options={Object.keys(this.state)}
+          
           onLeaveFeedback={this.countFeedback}
-        ></FeedbackOptions>
+        />
+        </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() === 0 ? (
             <Notification message="No feedback given" />
@@ -60,19 +61,4 @@ export class App extends React.Component {
 
 export default App;
 
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-//       React homework template
-//     </div>
-//   );
-// };
+

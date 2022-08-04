@@ -1,11 +1,10 @@
 import style from 'components/FeedbackOptions/FeedbackOptions.module.css';
-const Button = ({ good, neutral, bad, onLeaveFeedback }) => {
-  const response = { good, neutral, bad };
-  const arr = Object.keys(response);
-  console.log(arr);
+import PropTypes from 'prop-types'
+const Button = ({ options, onLeaveFeedback }) => {
+  // console.log(arr);
   return (
     <div>
-      {arr.map((button, id) => {
+      {options.map((button, id) => {
         return (
           <button
             key={id}
@@ -20,5 +19,10 @@ const Button = ({ good, neutral, bad, onLeaveFeedback }) => {
     </div>
   );
 };
+
+Button.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string.isRequired),
+  onLeaveFeedback: PropTypes.func.isRequired,
+}
 
 export default Button;
